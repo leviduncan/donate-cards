@@ -1,0 +1,87 @@
+$brdr: solid 1px #999;
+$brdr-bld: solid 2px #000;
+$brdr-rad: 5px;
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background: rgb(185, 202, 247);
+}
+
+#page-container {
+    position: relative;
+    min-height: 100vh;
+
+    #content-wrap {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        padding-bottom: 5.5rem;
+
+        .content {
+            width: 400px;
+            background: #fff;
+            border-radius: $brdr-rad;
+            box-shadow: 5px 10px 20px  rgb(137, 168, 255);
+            padding: 40px;
+
+            .card {
+                h4 {
+                    font-size: 18px;
+                    font-weight: bolder;
+                }
+                .box {
+                    width: 100%;
+                    border: $brdr;
+                    padding: 10px;
+                    border-radius: $brdr-rad;
+                    margin: 10px 0;
+                    display: flex;
+                    justify-content: flex-start;
+                    align-items: center;
+
+                    &:hover {
+                        border: $brdr-bld;
+
+                        .circle {
+                            border: $brdr-bld;
+                        }
+                    }
+
+                    .circle {
+                        border-radius: 50%;
+                        width: 20px;
+                        height: 20px;
+                        border: $brdr;
+                    }
+
+                    .txt {
+                        padding-left: 10px;
+
+                        .title {
+                            font-weight: bold;
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+
+    #footer {
+        position: fixed;
+        bottom: 0;
+        height: 5.5rem;
+        width: 100%;
+        background: #333;
+        color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}

@@ -1,13 +1,30 @@
-$brdr: solid 1px #999;
+$brdr: solid 1px #ccc;
 $brdr-bld: solid 2px #999;
 $blu: rgb(17, 9, 49);
+$colors: (
+    primary: #005dff,
+    primary-light: lighten(#005dff, 40%),
+    accent: #fff6bb
+);
+
+@function color($color-name) {
+    @return map-get($colors, $color-name)
+}
+
+
+
+
 $brdr-rad: 5px;
 $bp-mob: 480px;
 $bp-tab: 768px;
-$bp-dt: 960px;
+$bp-dt: 992px;
 $bp-sup: 1260px;
 
-
+@mixin desktop {
+    @media (min-width: #{$bp-dt}) {
+        @content;
+    }
+}
 
 * {
     box-sizing: border-box;
@@ -22,12 +39,27 @@ $bp-sup: 1260px;
     padding: 20px;
 }
 
+body, html {
+    height: 100%;
+}
+
 body {
-    // background: rgb(185, 202, 247);
-    background: url('https://images.unsplash.com/photo-1497375638960-ca368c7231e4?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1325&q=80') no-repeat;
-    background-size: cover;
     font-family: 'Poppins', sans-serif;
     color: $blu;
+
+    .bg {
+        clip-path: polygon(100% 0, 100% 79%, 50% 100%, 0 100%, 0 0);
+        background-color: color(primary);
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        z-index: -1;
+
+        @include desktop {
+            clip-path: polygon(0 0, 77% 0, 55% 100%, 0% 100%);
+
+        }
+    }
 }
 
 #page-container {
@@ -71,7 +103,15 @@ body {
             .head {
                 h1 {
                     text-transform: uppercase;
-                    font-size: 5rem;
+                    font-size: 4em;
+                    font-weight: bold;
+                    color: #fff;
+                    text-shadow: 2px 2px 5px  rgba(0, 0, 0, 0.267);
+                }
+
+                h2 {
+                    text-transform: capitalize;
+                    font-size: 2em;
                     font-weight: bold;
                     color: #fff;
                     text-shadow: 2px 2px 5px  rgba(0, 0, 0, 0.267);
@@ -80,9 +120,9 @@ body {
 
         .content {
             background: #fff;
-            border-radius: $brdr-rad;
             box-shadow: 5px 10px 20px  rgba(0, 0, 0, 0.267);
-            padding: 60px;
+            padding: 3rem;
+            border-radius: $brdr-rad;
 
             .card {
                 h4 {
@@ -100,7 +140,7 @@ body {
 
                     &:hover {
                         border: $brdr-bld;
-                        background: rgb(242, 242, 255);
+                        background-color: map-get($colors, accent);
 
                         .circle {
                             border: solid 6px #000;

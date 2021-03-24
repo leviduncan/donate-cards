@@ -44,7 +44,7 @@ body, html {
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     color: $blu;
 
     .bg {
@@ -87,6 +87,25 @@ body {
             box-shadow: 5px 10px 20px  rgba(0, 0, 0, 0.267);
             padding: 40px;
 
+            .cc {
+                background: #eee;
+                height: 150px;
+                border-radius: $brdr-rad;
+                padding: 15px;
+                margin-bottom: 20px;
+
+                .fa-cc-visa {
+                    padding-bottom: 20px;
+                }
+                
+            }
+            .fa-times-circle {
+                    color: #ccc;
+                    position: absolute;
+                    top: 10px;
+                    right: 10px;
+                    cursor: pointer;
+                }
         }
 
     }

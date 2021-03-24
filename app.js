@@ -1,6 +1,6 @@
 $(document).ready(function () {
 
-    $(".overlay").show();
+    $(".overlay").hide();
 
     $("#hide").click(function () {
         $(".overlay").hide();

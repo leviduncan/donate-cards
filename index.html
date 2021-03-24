@@ -18,8 +18,15 @@
 <body>
     <div class="bg"></div>
     <div id="page-container">
-        <div class="overlay">
-            <div class="content"></div>
+        <div class="overlay" id="hide">
+            <div class="row">
+                <div class="content col-md-8">
+                    <h4>Feed a child for 3 days</h4>
+                    <p class="amt">$5.50</p>
+                    <div class="box"></div>
+
+                </div>
+            </div>
         </div>
         <div id="content-wrap" class="container">
             <div class="row">
@@ -30,31 +37,31 @@
                 <div class="content col-md-6">
                     <div class="card">
                         <h4>How much would you like to donate?</h4>
-                        <div class="box">
+                        <div class="box" id="first">
                             <div class="circle"></div>
                             <div class="txt">
-                                <span class="title">Feed a child for 1 day</span><br />
-                                <span class="currency">$5.50</span>
+                                <span class="title" id="firstTitle">Feed a child for 1 day</span><br />
+                                <span class="currency" id="firstAmt">$5.50</span>
                             </div>
 
                         </div>
-                        <div class="box">
+                        <div class="box" id="second">
                             <div class="circle"></div>
                             <div class="txt">
-                                <span class="title">Feed a child for 3 days</span><br />
-                                <span class="currency">$16.50</span>
+                                <span class="title" id="secondTitle">Feed a child for 3 days</span><br />
+                                <span class="currency" id="secondAmt">$16.50</span>
                             </div>
 
                         </div>
-                        <div class="box">
+                        <div class="box" id="third">
                             <div class="circle"></div>
                             <div class="txt">
-                                <span class="title">Feed a child for 1 week</span><br />
-                                <span class="currency">$38.50</span>
+                                <span class="title" id="thirdTitle">Feed a child for 1 week</span><br />
+                                <span class="currency" id="thirdAmt">$38.50</span>
                             </div>
 
                         </div>
-                        <button class="btn btn-lg">Select Donation</button>
+                        <button class="btn btn-lg" id="show">Select Donation</button>
                     </div>
                 </div>
             </div>
